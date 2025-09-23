@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "nome": "Shampoo Nutritivo",
-    "descricao": "Shampoo com óleo de argan para cabelos secos",
-    "preco": "29.90",
-    "imagem": "imagens_produtos/produto1.jpg"
+    "nome": "Sabonetes",
+    "descricao": "Sabonete em barras Amdiroba",
+    "preco": 100.0,
+    "imagem": "imagens_produtos/contato3.jpg"
   },
   {
     "id": 2,
-    "nome": "Creme Hidratante",
-    "descricao": "Hidratante corporal com manteiga de karité",
-    "preco": "39.90",
-    "imagem": "imagens_produtos/produto2.jpg"
+    "nome": "Natura",
+    "descricao": "Perfume de alta qualidades",
+    "preco": 200.0,
+    "imagem": "imagens_produtos/contato2.jpeg"
   }
 ]

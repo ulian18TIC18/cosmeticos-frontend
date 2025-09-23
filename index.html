@@ -2,30 +2,67 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Início - Cosméticos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RITINHA NATURA & AVON</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo à Loja de Cosméticos</h1>
-  </header>
-
-  <main>
-    <section>
-      <h2>Informações Pessoais/Profissionais</h2>
-      <p>Aqui você pode adicionar uma breve descrição sobre você ou sobre a loja.</p>
-    </section>
+  <!-- Navbar -->
+  <header class="navbar">
     <nav>
       <ul>
-        <li><a href="produtos.html">Ver Produtos</a></li>
-        <li><a href="revista.html">Solicitar Revista</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li class="brand">
+          <span class="icon">💄</span>
+          <h1>RITINHA NATURA & AVON</h1>
+        </li>
+        <li><a href="solicitar-revista.html" class="btn-revista">Solicitar Revista</a></li>
       </ul>
     </nav>
+  </header>
+
+  <!-- Lista de Produtos -->
+  <main>
+    <section id="produtos-container" class="produtos">
+      <!-- Produtos carregados via produtos.json -->
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Cosméticos</p>
+  <!-- Footer -->
+  <footer id="contato">
+    <p>&copy; 2025 Ritinha Natura & Avon</p>
+    <a href="https://wa.me/seu_numero_aqui" target="_blank" class="whatsapp">
+      📱 Fale pelo WhatsApp
+    </a>
   </footer>
+
+  <script>
+    async function carregarProdutos() {
+      try {
+        const response = await fetch("produtos.json");
+        const produtos = await response.json();
+        const container = document.getElementById("produtos-container");
+
+        produtos.forEach(produto => {
+          const div = document.createElement("div");
+          div.classList.add("produto");
+
+          div.innerHTML = `
+            ${produto.imagem ? `<img src="${produto.imagem}" alt="${produto.nome}">` : ""}
+            <h2>${produto.nome}</h2>
+            <p class="categoria">${produto.categoria}</p>
+            <p class="descricao">${produto.descricao}</p>
+            <p class="preco">R$ ${produto.preco}</p>
+          `;
+
+          container.appendChild(div);
+        });
+      } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
+      }
+    }
+
+    carregarProdutos();
+  </script>
 </body>
 </html>
-
