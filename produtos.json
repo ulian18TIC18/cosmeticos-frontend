@@ -1,16 +1,23 @@
 [
   {
     "id": 1,
-    "nome": "Sabonetes",
-    "descricao": "Sabonete em barras Amdiroba",
-    "preco": 100.0,
-    "imagem": "imagens_produtos/contato3.jpg"
+    "nome": "Kaiak Extremo",
+    "descricao": "Cuidados com a pele com produtos Natura e sua qualidade única.",
+    "preco": 99.99,
+    "imagem": "imagens_produtos/kaiak_extremo.jpg"
   },
   {
     "id": 2,
-    "nome": "Natura",
-    "descricao": "Perfume de alta qualidades",
-    "preco": 200.0,
-    "imagem": "imagens_produtos/contato2.jpeg"
+    "nome": "Ekos Andiroba",
+    "descricao": "Sabonetes natura com 5 unidades",
+    "preco": 19.99,
+    "imagem": "imagens_produtos/ekos_andiroba.jpg"
+  },
+  {
+    "id": 3,
+    "nome": "Essencial Natura",
+    "descricao": "Perfume de alta qualidade.",
+    "preco": 129.99,
+    "imagem": "imagens_produtos/essencial_natura.jpg"
   }
 ]

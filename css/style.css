@@ -182,6 +182,14 @@ footer {
     height: 42px;
 }
 
+.whatsapp-icon {
+    width: 24px;       /* largura do ícone */
+    height: auto;      /* mantém a proporção */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
 .whatsapp-btn:hover {
     filter: brightness(0.9);
 }
