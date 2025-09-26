@@ -7,19 +7,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navbar -->
+    <!-- header -->
   <header class="navbar">
-    <nav>
-      <ul>
-        <li><a href="#contato">Contato</a></li>
-        <li class="brand">
-          <span class="icon">💄</span>
-          <h1>RITINHA NATURA & AVON</h1>
-        </li>
-        <li><a href="solicitar-revista.html" class="btn-revista">Solicitar Revista</a></li>
-      </ul>
-    </nav>
+    <span class="site-title">RITINHA NATURA & AVON</span>
   </header>
+    <!-- Navbar -->
+  <nav>
+    <a href="https://wa.me/5599999999999" target="_blank">CONTATO</a>
+    <a href="revista.html">REVISTA</a>
+    <a href="index.html">PRODUTOS</a>
+  </nav>
 
   <!-- Lista de Produtos -->
   <main>
@@ -29,40 +26,46 @@
   </main>
 
   <!-- Footer -->
-  <footer id="contato">
-    <p>&copy; 2025 Ritinha Natura & Avon</p>
-    <a href="https://wa.me/seu_numero_aqui" target="_blank" class="whatsapp">
-      📱 Fale pelo WhatsApp
-    </a>
+  <footer>
+    <div class="footer-actions">
+      <a href="revista.html" class="btn-revista">Pedir Revista</a>
+      <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-btn">💬</a>
+    </div>
+    <p>© 2025 Desenvolvedor Ulian Almeida. All Rights Reserved.</p>
   </footer>
 
   <script>
-    async function carregarProdutos() {
-      try {
-        const response = await fetch("produtos.json");
-        const produtos = await response.json();
-        const container = document.getElementById("produtos-container");
+  async function carregarProdutos() {
+    try {
+      const response = await fetch("produtos.json");
+      const produtos = await response.json();
+      const container = document.getElementById("produtos-container");
 
-        produtos.forEach(produto => {
-          const div = document.createElement("div");
-          div.classList.add("produto");
+      produtos.forEach(produto => {
+        const div = document.createElement("div");
+        div.classList.add("produto");
 
-          div.innerHTML = `
-            ${produto.imagem ? `<img src="${produto.imagem}" alt="${produto.nome}">` : ""}
-            <h2>${produto.nome}</h2>
-            <p class="categoria">${produto.categoria}</p>
-            <p class="descricao">${produto.descricao}</p>
-            <p class="preco">R$ ${produto.preco}</p>
-          `;
+        // formata preço com 2 casas decimais e vírgula
+        const precoFormatado = parseFloat(produto.preco)
+                                .toFixed(2)
+                                .replace('.', ',');
 
-          container.appendChild(div);
-        });
-      } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
-      }
+        div.innerHTML = `
+          ${produto.imagem ? `<img src="${produto.imagem}" alt="${produto.nome}">` : ""}
+          <h2>${produto.nome}</h2>
+          <p class="categoria">${produto.categoria}</p>
+          <p class="descricao">${produto.descricao}</p>
+          <p class="preco">R$ ${precoFormatado}</p>
+        `;
+
+        container.appendChild(div);
+      });
+    } catch (error) {
+      console.error("Erro ao carregar produtos:", error);
     }
+  }
 
-    carregarProdutos();
-  </script>
+  carregarProdutos();
+</script>
 </body>
 </html>
