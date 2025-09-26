@@ -9,8 +9,7 @@
 <body>
     <!-- header -->
   <header class="navbar">
-    <a href="revista.html" class="site-title">RITINHA NATURA & AVON</a>
-    <a href="index.html">PRODUTOS</a>
+    <span class="site-title">RITINHA NATURA & AVON</span>
   </header>
     <!-- Navbar -->
   <nav>
@@ -20,21 +19,29 @@
   </nav>
 
   <main>
-    <section class="form-section">
-      <form>
+  <section class="form-section container">
+    <h2 class="form-title">Solicite seu Produto</h2>
+    <form class="solicitacao-form">
+      <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+      </div>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+      <div class="form-group">
+        <label for="produto">Produto Desejado:</label>
+        <textarea id="produto" name="produto" placeholder="Ex: Perfume Natura Essencial"></textarea>
+      </div>
 
+      <div class="form-group">
         <label for="endereco">Endereço:</label>
-        <textarea id="endereco" name="endereco"></textarea>
+        <textarea id="endereco" name="endereco" placeholder="Rua, número, local, cidade"></textarea>
+      </div>
 
-        <button type="submit">Solicitar</button>
-      </form>
-    </section>
+      <button type="submit" class="btn-enviar">Solicitar</button>
+    </form>
+  </section>
   </main>
+
 
   <footer>
     <div class="footer-actions">
